@@ -7,4 +7,4 @@ COPY *.sh /data/apps/v8cdn/
 # 运行安装脚本
 RUN sh /data/apps/v8cdn/install.sh
 # 启动运行
-CMD ["/data/apps/v8cdn/v8cdn"]
+CMD ["./v8cdn"]
