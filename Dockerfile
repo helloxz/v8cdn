@@ -1,5 +1,5 @@
 # 指定基础镜像
-FROM debian:12-slim
+FROM debian:11-slim
 # 设置工作目录
 WORKDIR /data/apps/v8cdn
 # 复制脚本文件
