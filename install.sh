@@ -1,20 +1,12 @@
-#!/bin/sh
-
-#更新软件
-apk update --no-cache
-#安装timezone
-apk add --no-cache -U tzdata wget
-#查看时区列表
-ls /usr/share/zoneinfo
-#拷贝需要的时区文件到localtime
-cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-#查看当前时间
-date
+#!/bin/bash
 
 # 申明版本变量
 V8CDN_VERSION=1.0.1
 # 申明前端版本变量
 V8CDN_FRONT_VERSION=1.0.1
+
+apt-get update
+apt-get install -y wget
 
 
 # 下载资源文件
@@ -44,7 +36,8 @@ download() {
 
 # 清理文件
 clean() {
-    apk del tzdata wget
+    apt-get remove -y wget
+    rm -rf /var/lib/apt/lists/*
 }
 
 download && clean

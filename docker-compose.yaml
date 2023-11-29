@@ -2,6 +2,8 @@ version: '3'
 services:
   v8cdn:
     image: helloz/v8cdn
+    environment:
+      - TZ=Asia/Shanghai
     volumes:
       - ./config/config.js:/data/apps/v8cdn/dist/config.js
       - ./config/config.yaml:/data/apps/v8cdn/config.yaml
