@@ -1,0 +1,11 @@
+version: '3'
+services:
+  v8cdn:
+    image: helloz/v8cdn
+    volumes:
+      - ./config.json:/data/apps/v8cdn/dist/config.json
+      - ./config.yaml:/data/apps/v8cdn/config.yaml
+    ports:
+      - 8080:8080
+    restart: always
+    container_name: v8cdn
